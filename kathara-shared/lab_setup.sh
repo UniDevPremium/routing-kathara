@@ -8,7 +8,7 @@ echo -e "# Canali router-host\
 \n\n# Canali router-router\
 \n\nr1[0]=R1R2\nr2[4]=R1R2\n\nr1[1]=R1R4\nr4[4]=R1R4\
 \n\nr1[2]=R1R6\nr6[4]=R1R6\n\nr1[3]=R1R8\nr8[4]=R1R8\
-\n\nr1[4]=R1-ISP\nisp[0]=R1-ISP\
+\n\nr1[4]=RISP\nisp[0]=RISP\
 \n\nr2[1]=R2R3\nr3[2]=R2R3\n\nr2[2]=R2R9\nr9[0]=R2R9\
 \n\nr3[1]=R3R4\nr4[3]=R3R4\n\nr4[2]=R4R5\nr5[0]=R4R5\
 \n\nr5[2]=R5R6\nr6[0]=R5R6\n\nr6[3]=R6R7\nr7[0]=R6R7\
@@ -75,7 +75,7 @@ echo -e "ip addr add 130.63.0.1/19 dev eth0 \
 \nip addr add 130.63.32.1/19 dev eth3\
 \nip addr add 130.63.255.206/30 dev eth4\
 \n\nip route add default via 130.63.255.205 dev eth4 # fuori rete to r1\
-\niproute add 130.63.255.252/30 via 130.63.255.205 dev eth4 # diretto a isp\
+\nip route add 130.63.255.252/30 via 130.63.255.205 dev eth4 # diretto a isp\
 \nip route add 130.63.0.0/16 via 130.63.255.222 dev eth1 # tutte altre lan to r3" > r2.startup
 
 echo -e "ip addr add 130.63.168.1/21 dev eth0 # gela\
