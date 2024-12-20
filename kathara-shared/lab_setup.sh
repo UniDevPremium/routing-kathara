@@ -1,10 +1,10 @@
 echo -e "# Canali router-host\
-\n\nRoma[0]=A\nr2[0]=A\n\nFiuggi[0]=B\nr3[0]=B\
-\n\nGela[0]=C\nr4[0]=C\n\nLodi[0]=D\nr4[1]=D\
-\n\nImola[0]=E\nr5[1]=E\n\nPisa[0]=F\nr6[1]=F\
-\n\nLivorno[0]=G\nr6[2]=G\n\nAsti[0]=H\nr7[1]=H\
-\n\nOrta[0]=I\nr8[2]=I\n\nLucca[0]=L\nr8[3]=L\
-\n\nComo[0]=M\nr9[2]=M\n\nPavia[0]=N\nr2[3]=N\
+\n\nroma[0]=A\nr2[0]=A\n\nfiuggi[0]=B\nr3[0]=B\
+\n\ngela[0]=C\nr4[0]=C\n\nlodi[0]=D\nr4[1]=D\
+\n\nimola[0]=E\nr5[1]=E\n\npisa[0]=F\nr6[1]=F\
+\n\nlivorno[0]=G\nr6[2]=G\n\nasti[0]=H\nr7[1]=H\
+\n\norta[0]=I\nr8[2]=I\n\nlucca[0]=L\nr8[3]=L\
+\n\ncomo[0]=M\nr9[2]=M\n\npavia[0]=N\nr2[3]=N\
 \n\n# Canali router-router\
 \n\nr1[0]=R1R2\nr2[4]=R1R2\n\nr1[1]=R1R4\nr4[4]=R1R4\
 \n\nr1[2]=R1R6\nr6[4]=R1R6\n\nr1[3]=R1R8\nr8[4]=R1R8\
