@@ -67,7 +67,8 @@ echo -e "ip addr add 130.63.255.205/30 dev eth0\
 \nip route add 130.63.144.0/20 via 130.63.255.218 dev eth3 # lucca to r8\
 \nip route add 130.63.176.0/22 via 130.63.255.218 dev eth3 # como to r8\
 \nip route add 130.63.186.0/25 via 130.63.255.218 dev eth3 # orta to r8\
-\nip route add 130.63.255.220/28 via 130.63.255.206 dev eth0 # r2r3 , r3r4 (r2r9,r4r5) to r2\
+\nip route add 130.63.255.220/30 via 130.63.255.206 dev eth0 # r2r3 to r2\
+\nip route add 130.63.255.228/30 via 130.63.255.206 dev eth0 # r3r4 to r2\
 \nip route add 130.63.255.232/29 via 130.63.255.210 dev eth1 # r4r5 , r5r6 to r4\
 \nip route add 130.63.255.240/29 via 130.63.255.214 dev eth2 # r6r7 , r7r8 to r6\
 \nip route add 130.63.255.224/30 via 130.63.255.218 dev eth3 # r2r9 to r8\
