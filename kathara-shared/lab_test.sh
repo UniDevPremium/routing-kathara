@@ -1,4 +1,5 @@
 LOG_FILE="test_result.log"
+SHARK_FILE="traffico_riposo.pcap"
 IP_CITTA=("130.63.0.2" "130.63.32.2" "130.63.64.2"\
  "130.63.168.2" "130.63.96.2" "130.63.184.2"\
  "130.63.128.2" "130.63.160.2" "130.63.180.2"\
@@ -11,8 +12,10 @@ CITTA=("roma" "pavia" "fiuggi"\
 ip_isp="130.63.255.254"
 ip_out="130.64.0.1"
 
-echo "------- INIZIO TEST -------" >> $LOG_FILE
+kathara edgeshark -w $SHARK_FILE & PID=$!
+echo "Cattura in corso... (PID: $PID)"
 
+echo "------- INIZIO TEST -------" > $LOG_FILE
 echo "------- Ping from ISP to CITTA -------" >> $LOG_FILE
 echo "----------------------------" >> $LOG_FILE
 for i in "${!CITTA[@]}"; do
@@ -35,3 +38,6 @@ for i in "${!CITTA[@]}"; do
     kathara exec $nodo -- traceroute $ip_out>> $LOG_FILE 2>&1
     echo "----------------------------" >> $LOG_FILE
 done
+
+kill $PID
+echo "Cattura interrotta. I pacchetti sono stati salvati in $SHARK_FILE"
