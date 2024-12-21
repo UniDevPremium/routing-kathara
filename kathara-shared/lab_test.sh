@@ -19,17 +19,17 @@ echo "------- INIZIO TEST -------" > $LOG_FILE
 echo "------- Ping from ISP to CITTA -------" >> $LOG_FILE
 echo "----------------------------" >> $LOG_FILE
 for i in "${!CITTA[@]}"; do
-    nodo="${CITTA[$i]}.startup"
+    nodo="${CITTA[$i]}"
     ip="${IP_CITTA[$i]}"
     echo "------- to ${CITTA[$i]} : ${IP_CITTA[$i]} -------" >> $LOG_FILE
-    kathara exec isp.startup -- traceroute $ip >> $LOG_FILE 2>&1
+    kathara exec isp -- traceroute $ip >> $LOG_FILE 2>&1
     echo "----------------------------" >> $LOG_FILE
 done
 
 echo "------- Ping from CITTA to ISP e OUT -------" >> $LOG_FILE
 echo "----------------------------" >> $LOG_FILE
 for i in "${!CITTA[@]}"; do
-    nodo="${CITTA[$i]}.startup"
+    nodo="${CITTA[$i]}"
     ip="${IP_CITTA[$i]}"
     echo "------- from ${CITTA[$i]} : ${IP_CITTA[$i]} -------" >> $LOG_FILE
     echo "------- to ISP -------" >> $LOG_FILE
