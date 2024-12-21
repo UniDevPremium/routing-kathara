@@ -12,8 +12,10 @@ CITTA=("roma" "pavia" "fiuggi"\
 ip_isp="130.63.255.254"
 ip_out="130.64.0.1"
 
-kathara edgeshark -w $SHARK_FILE & PID=$!
-echo "Cattura in corso... (PID: $PID)"
+kathara lstart
+
+#kathara edgeshark -w $SHARK_FILE & PID=$!
+#echo "Cattura in corso... (PID: $PID)"
 
 echo "------- INIZIO TEST -------" > $LOG_FILE
 echo "------- Ping from ISP to CITTA -------" >> $LOG_FILE
@@ -39,5 +41,5 @@ for i in "${!CITTA[@]}"; do
     echo "----------------------------" >> $LOG_FILE
 done
 
-kill $PID
-echo "Cattura interrotta. I pacchetti sono stati salvati in $SHARK_FILE"
+#kill $PID
+#echo "Cattura interrotta. I pacchetti sono stati salvati in $SHARK_FILE"
