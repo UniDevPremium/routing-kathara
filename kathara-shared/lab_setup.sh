@@ -15,7 +15,7 @@ echo -e "# Canali router-host\
 \n\nr7[2]=R7R8\nr8[1]=R7R8\n\nr8[0]=R8R9\nr9[1]=R8R9" > lab.conf
 
 echo -e "ip addr add 130.63.255.254/30 dev eth0\
-\nip route add default via 130.63.255.253 dev eth0 # r1" > isp.startup
+\nip route add 130.63.0.0/16 via 130.63.255.253 dev eth0 # r1" > isp.startup
 
 echo -e "ip addr add 130.63.0.2/19 dev eth0\
 \nip route add default via 130.63.0.1 dev eth0 # r2" > roma.startup
@@ -67,7 +67,11 @@ echo -e "ip addr add 130.63.255.205/30 dev eth0\
 \nip route add 130.63.144.0/20 via 130.63.255.218 dev eth3 # lucca to r8\
 \nip route add 130.63.176.0/22 via 130.63.255.218 dev eth3 # como to r8\
 \nip route add 130.63.186.0/25 via 130.63.255.218 dev eth3 # orta to r8\
-" > r1.startup
+\nip route add 130.63.255.220/28 via 130.63.255.206 dev eth0 # r2r3 , r3r4 (r2r9,r4r5) to r2\
+\nip route add 130.63.255.232/29 via 130.63.255.210 dev eth1 # r4r5 , r5r6 to r4\
+\nip route add 130.63.255.240/29 via 130.63.255.214 dev eth2 # r6r7 , r7r8 to r6\
+\nip route add 130.63.255.224/30 via 130.63.255.218 dev eth3 # r2r9 to r8\
+\nip route add 130.63.255.248/30 via 130.63.255.218 dev eth3 # r8r9 to r4" > r1.startup
 
 echo -e "ip addr add 130.63.0.1/19 dev eth0 \
 \nip addr add 130.63.255.221/30 dev eth1\
@@ -124,8 +128,3 @@ echo -e "ip addr add 130.63.255.226/30 dev eth0 # r2r9\
 \nip addr add 130.63.255.250/30 dev eth1 # r8r9\
 \nip addr add 130.63.176.1/22 dev eth2 # como\
 \n\nip route add default via 130.63.255.225 dev eth0 # to r2" > r9.startup
-
-
-
-# todo:
-# routing tra router

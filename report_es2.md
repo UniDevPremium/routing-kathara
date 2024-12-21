@@ -12,7 +12,7 @@ Le comunicazioni da simulare sono:
  - ISP-Città, R1 riceve dall'ISP e trasmette verso il router posizionato in angolo che minimizza il numero di hop fino alla Città;
  - Città-ISP, il router di bordo riceve dalla Città e trasmette , se necessario, verso il successivo router posizionato in angolo, questo trasmette ad R1 che invia verso l'ISP.
 
-## Routing di R1
+## Routing R1
 IL router R1 fa collega la rete con l'ISP, richiede un accurata gestione delle rotte al fine di minimizzarne il numero.
 
 Per mantenere i percorsi il più brevi possibile occorre instradare verso ogni router in angolo, i pacchetti destinati alle LAN che sono connesse ad esso ed a quello successivo in senso orario :
@@ -28,7 +28,7 @@ Resta da eseguire il supernetting dove possibile.
 - R6, possiamo usare una la supernet minima che le racchiude tutte a partire dalla prima, in quanto c'è una rotta più specifica per ogni LAN indesiderata;
 - R8, usiamo una rotta specifica per ognuna , per lo stesso motivo di R4.
 
-## Routing di R2,4,6,8
+## Routing R2,4,6,8
 I router posizionati in angolo hanno 5 interfacce: una verso R1, due verso LAN distinte, una verso il router successivo in senso orario, una verso il router precendente.
 Il traffico verso le LAN cittadine viene gestito senza bisogno di rotte.
 
@@ -36,9 +36,16 @@ Indirizziamo verso il router successivo tutto il traffico diretto all'interno de
 
 Usiamo la rotta di default per simulare il traffico in uscita dalla rete che verrà instradato verso R1. Anche la destinazione ISP va instradata verso R1.
 
-## Routind di R3,5,7,9
+## Routing R3,5,7,9
 I router posizionati sui lati hanno 3 interfacce: una verso il router precedente, una verso il router successivo ed una verso la LAN cittadina.
 Il traffico verso la LAN cittadina viene gestito senza bisogno di rotte.
 
 Usiamo solo la rotta default verso il router successivo in quanto la direzione è obbligata.
+
+## Routing ISP
+L'ISP ha una sola rotta indirizzata verso R1 per ogni pacchetto destinato alla nostra rete /16.
+
+## Routing Host
+Ogni host rappresenta una LAN cittadina e deve poter scambiare messaggi con l'ISP.
+Assegniamo una sola rotta di default in uscita dall'unica interfaccia, con des
 
